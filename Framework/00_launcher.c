@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_test.c                                        :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 12:17:25 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:33:53 by pclement         ###   ########.fr       */
+/*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/01 18:33:52 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+# include "libunit.h"
 
+//A enlever
+# include <stdio.h>
 
-void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)(void))
+int		strlen_launcher(void)
 {
-	t_unit_test *new;
+	t_unit_test	*test_list;
 
-	if ((new = (t_unit_test *)malloc(sizeof(t_unit_test))) == 0)
-		return ;
+	test_list = 0;
+	load_test(&test_list, "Basic test", &basic_test);
+	return(launch_test(&test_list));
+}
 
-	new->name = test_name;
-	new->func_ptr = test_func_ptr;
-	new->result = 0;
-	new->error_type = 0;
-	new->prev = 0;
-	new->next = *test_list_ptr;
-	if (new->next)
-		new->next->prev = new;
-	*test_list_ptr = new;
+int		main()
+{
+	return (strlen_launcher());
 }

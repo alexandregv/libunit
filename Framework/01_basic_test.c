@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_test.c                                        :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 12:17:25 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:33:53 by pclement         ###   ########.fr       */
+/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/01 18:33:50 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+# include "libunit.h"
+# include <string.h>
 
-
-void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)(void))
+int		basic_test(void)
 {
-	t_unit_test *new;
+	char * str;
 
-	if ((new = (t_unit_test *)malloc(sizeof(t_unit_test))) == 0)
-		return ;
-
-	new->name = test_name;
-	new->func_ptr = test_func_ptr;
-	new->result = 0;
-	new->error_type = 0;
-	new->prev = 0;
-	new->next = *test_list_ptr;
-	if (new->next)
-		new->next->prev = new;
-	*test_list_ptr = new;
+	if (strlen("Hello1") == ft_strlen("Hello"))
+		return (0);
+	else
+		return (-1);
 }

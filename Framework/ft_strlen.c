@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_test.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 12:17:25 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:33:53 by pclement         ###   ########.fr       */
+/*   Created: 2017/11/13 18:56:12 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/01 15:58:58 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "libft.h"
 
-
-void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)(void))
+size_t	ft_strlen(const char *s)
 {
-	t_unit_test *new;
+	size_t	len;
 
-	if ((new = (t_unit_test *)malloc(sizeof(t_unit_test))) == 0)
-		return ;
-
-	new->name = test_name;
-	new->func_ptr = test_func_ptr;
-	new->result = 0;
-	new->error_type = 0;
-	new->prev = 0;
-	new->next = *test_list_ptr;
-	if (new->next)
-		new->next->prev = new;
-	*test_list_ptr = new;
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_test.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 12:17:25 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:33:53 by pclement         ###   ########.fr       */
+/*   Created: 2017/11/15 18:58:28 by pclement          #+#    #+#             */
+/*   Updated: 2017/11/15 19:09:44 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "libft.h"
 
-
-void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)(void))
+void	ft_putnbr(int n)
 {
-	t_unit_test *new;
+	long	result;
+	char	c;
 
-	if ((new = (t_unit_test *)malloc(sizeof(t_unit_test))) == 0)
-		return ;
-
-	new->name = test_name;
-	new->func_ptr = test_func_ptr;
-	new->result = 0;
-	new->error_type = 0;
-	new->prev = 0;
-	new->next = *test_list_ptr;
-	if (new->next)
-		new->next->prev = new;
-	*test_list_ptr = new;
+	result = (long)(n);
+	if (result < 0)
+	{
+		write(1, "-", 1);
+		result = -result;
+	}
+	if (result / 10 > 0)
+		ft_putnbr(result / 10);
+	c = result % 10 + 48;
+	write(1, &c, 1);
 }
