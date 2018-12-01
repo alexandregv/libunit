@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test.c                                    :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 19:06:10 by pclement         ###   ########.fr       */
+/*   Created: 2018/12/01 18:44:49 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/01 18:51:42 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libunit.h"
-# include <string.h>
+#include "libunit.h"
 
-int		basic_test(void)
+void	ft_free_list(t_unit_test *list_ptr)
 {
-	char *str;
+	t_unit_test		*temp;
 
-	if (strlen("Hello1") == ft_strlen("Hello"))
-		return (0);
-	else
-		return (-1);
+	while (list_ptr)
+	{
+		temp = list_ptr;
+		list_ptr = list_ptr->next;
+		free(temp);
+	}
 }

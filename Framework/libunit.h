@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:03:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:15:09 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/01 19:31:21 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_unit_test
 
 void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)(void));
 int		launch_test(t_unit_test **test_list_ptr);
+void	ft_free_list(t_unit_test *list_ptr);
 
 
 //A enlever
