@@ -6,12 +6,12 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 16:35:01 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:57:25 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
-# include <stdlib.h>
+#include "../tests.h"
+#include <stdlib.h>
 
 int		atoi_basic_test_a(void)
 {
