@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 12:07:02 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:06:58 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		strlen_null_test(void)
 {
-	if (strlen("") == ft_strlen(""))
+	if (ft_strlen("") == ft_strlen(""))
 		return (0);
 	else
 		return (-1);

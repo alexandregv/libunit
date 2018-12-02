@@ -6,18 +6,22 @@ CFLAGS = -Werror -Wall -Wextra
 
 
 #libs
-LIB_PATH = ../Framework/
-LIB_NAME = libunit.a
-LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
+LIBUNIT_PATH = ../Framework/
+LIBUNIT_NAME = libunit.a
+LIBUNIT = $(addprefix $(LIBUNIT_PATH), $(LIBUNIT_NAME))
+
+LIBFT_PATH = ./libft/
+LIBFT_NAME = libft.a
+LIBFT = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+
 
 #flags for preprocessor
 #CPPFLAGS = -I ../Framework/includes/
 #LFLAGS = -Llibunit -lunit
 
 #deps
-DEPENDENCIES = $(LIB_PATH)/Makefile $(LIB_PATH)/includes/libunit.h  Makefile
+DEPENDENCIES = $(LIBUNIT_PATH)/Makefile $(LIBUNIT_PATH)/includes/libunit.h  Makefile
 
-# TODO ENLEVER libft.h ?? verifier
 #srcs
 MAIN_SRC_PATH = 
 MAIN_SRC_NAME = main.c
@@ -50,8 +54,8 @@ all: $(NAME)
 test: $(NAME)
 	@./$(NAME)
 
-$(NAME): $(LIB) $(OBJ) $(DEPENDENCIES)
-	@$(CC)  $(CFLAGS) $(OBJ) $(LIB) -o $@
+$(NAME): $(LIBFT) $(LIBUNIT) $(OBJ) $(DEPENDENCIES)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(LIBUNIT) -o $@
 	@echo "$(GREEN)$(NAME) binary compilation succesfull$(END_COLOUR)"
 
 $(OBJ_PATH)%.o: %.c
@@ -60,20 +64,26 @@ $(OBJ_PATH)%.o: %.c
 	@mkdir $(OBJ_PATH)/$(ISUPPER_SRC_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(LIB):
-	@echo "$(CYAN)Compiling library $(END_COLOUR)"
-	@$(MAKE) -C $(LIB_PATH)
+$(LIBFT):
+	@echo "$(CYAN)Compiling libft library $(END_COLOUR)"
+	@$(MAKE) -C $(LIBFT_PATH)
+
+$(LIBUNIT):
+	@echo "$(CYAN)Compiling unit tests library $(END_COLOUR)"
+	@$(MAKE) -C $(LIBUNIT_PATH)
 
 clean:
-	@$(MAKE) -C $(LIB_PATH) clean
+	@$(MAKE) -C $(LIBUNIT_PATH) clean
+	@$(MAKE) -C $(LIBFT_PATH) clean
 	@$(RM) $(OBJ)
 	@$(RM) -R $(OBJ_PATH) 2> /dev/null || true
 
 fclean: clean
-	@$(MAKE) -C $(LIB_PATH) fclean
+	@$(MAKE) -C $(LIBUNIT_PATH) fclean
+	@$(MAKE) -C $(LIBFT_PATH) fclean
 	@$(RM) $(NAME)
 
 re: 
 	@$(MAKE) fclean
-	@$(MAKE) -C $(LIB_PATH) re
+	@$(MAKE) -C $(LIBUNIT_PATH) re
 	@$(MAKE) all
