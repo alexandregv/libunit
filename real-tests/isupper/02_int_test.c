@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 12:15:43 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:06:32 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		isupper_int_test(void)
 {
-	if (isupper('0') == isupper('0'))
+	if (ft_isupper('0') == isupper('0'))
 		return (0);
 	else
 		return (-1);

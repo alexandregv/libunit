@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:03:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 15:22:01 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 15:26:03 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,6 @@ void		ft_print_test_suite_name(char *name);
 void		ft_print_test_result(char *result, int result_type);
 void		ft_print_test_suite_result(int passed_tests, int total_tests);
 
-
-//A enlever
-size_t	ft_strlen(char *str);
-void	ft_putnbr(int n);
-int		basic_test(void);
-#include <stdio.h>
 
 #endif
 
