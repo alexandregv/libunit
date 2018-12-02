@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_print_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 18:44:49 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 15:21:41 by pclement         ###   ########.fr       */
+/*   Created: 2018/12/02 18:10:42 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 18:10:49 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-
-t_unit_test	*ft_get_first(t_unit_test *list_ptr)
-{
-	while (list_ptr && list_ptr->prev)
-		list_ptr = list_ptr->prev;
-	return list_ptr;
-}
 
 void		ft_free_list(t_unit_test *list_ptr)
 {
