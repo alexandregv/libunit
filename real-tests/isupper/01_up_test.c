@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_int_test.c                                      :+:      :+:    :+:   */
+/*   01_up_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:06:32 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 15:16:23 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 15:16:25 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
 # include <ctype.h>
 
-int		isupper_int_test(void)
+int		isupper_up_test(void)
 {
-	if (ft_isupper('0') == isupper('0'))
+	if (ft_isupper('A') == isupper('A'))
 		return (0);
 	else
 		return (-1);

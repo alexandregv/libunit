@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   03_int_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:57:03 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/02 15:16:02 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
+# include <ctype.h>
 
-int		isupper_launcher(void)
+int		tolower_int_test(void)
 {
-	t_unit_test	*test_list;
-
-	test_list = 0;
-	load_test(&test_list, "Basic test UP", &isupper_up_test);
-	load_test(&test_list, "Basic test DOWN", &isupper_down_test);
-	load_test(&test_list, "Int test", &isupper_int_test);
-	return(launch_test(&test_list));
+	if (ft_tolower('0') == tolower('0'))
+		return (0);
+	else
+		return (-1);
 }
-

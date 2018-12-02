@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:57:03 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 15:21:34 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 15:35:20 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
 
-int		isupper_launcher(void)
+int		memset_launcher(void)
 {
 	t_unit_test	*test_list;
 
 	test_list = 0;
-	load_test(&test_list, "Basic test UP", &isupper_up_test);
-	load_test(&test_list, "Basic test DOWN", &isupper_down_test);
-	load_test(&test_list, "Int test", &isupper_int_test);
+	load_test(&test_list, "Basic test", &memset_basic_test);
+	load_test(&test_list, "One-byte test", &memset_onebyte_test);
 	return(launch_test(&test_list));
 }
 

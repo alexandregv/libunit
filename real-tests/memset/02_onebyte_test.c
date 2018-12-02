@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test.c                                    :+:      :+:    :+:   */
+/*   02_onebyte_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:06:25 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 15:34:28 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 15:35:32 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
-# include <ctype.h>
+# include <stdlib.h>
+# include <string.h>
 
-int		isupper_basic_test(void)
+int			memset_onebyte_test(void)
 {
-	if (ft_isupper('a') == isupper('a'))
+	char	*str;
+	
+	if ((str = (char*)malloc(sizeof(char) * 1)) == NULL)
+		return (-1);
+	if (ft_memset(str, '\0', (size_t)1) == ft_memset(str, '\0', (size_t)1))
+	{
+		free(str);
+		str = NULL;
 		return (0);
+	}
 	else
 		return (-1);
 }
