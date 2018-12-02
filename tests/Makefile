@@ -33,6 +33,10 @@ OBJ_PATH = obj/
 OBJ_NAME = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
+#colours
+END_COLOUR	=	\033[0m
+GREEN		=	\033[32m
+CYAN		=	\033[36m
 
 #disable implicit rules
 .SUFFIXES:

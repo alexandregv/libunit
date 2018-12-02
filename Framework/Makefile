@@ -37,6 +37,11 @@ OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 .SUFFIXES:
 .PHONY: clean fclean all re
 
+#colours
+END_COLOUR	=	\033[0m
+GREEN		=	\033[32m
+CYAN		=	\033[36m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
