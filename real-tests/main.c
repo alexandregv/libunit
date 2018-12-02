@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/02 17:45:54 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 18:09:37 by pclement         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "tests.h"
 
 int	main(void)
@@ -11,8 +23,8 @@ int	main(void)
 	ret += memset_launcher();
 	ret += atoi_launcher();
 	ret += strchr_launcher();
-	ret += 	strdup_launcher();
-	ret += 	strstr_launcher();
+	ret += strdup_launcher();
+	ret += strstr_launcher();
 	if (ret == 0)
 		return (0);
 	else

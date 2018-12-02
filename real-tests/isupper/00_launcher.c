@@ -6,11 +6,11 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 17:39:34 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 18:06:41 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
+#include "../tests.h"
 
 int		isupper_launcher(void)
 {
@@ -21,6 +21,5 @@ int		isupper_launcher(void)
 	load_test(&test_list, "Basic test UP", &isupper_up_test);
 	load_test(&test_list, "Basic test DOWN", &isupper_down_test);
 	load_test(&test_list, "Int test", &isupper_int_test);
-	return(launch_test(&test_list));
+	return (launch_test(&test_list));
 }
-

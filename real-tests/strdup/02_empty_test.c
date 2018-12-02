@@ -6,12 +6,12 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:40:55 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 17:46:11 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 18:04:42 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
-# include <string.h>
+#include "../tests.h"
+#include <string.h>
 
 int			strdup_empty_test(void)
 {
