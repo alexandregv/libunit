@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libunit.h"
+# include "../../Framework/includes/libunit.h"
 # include <string.h>
 
 int		basic_test(void)
 {
-	char *str;
-
 	if (strlen("Hello1") == ft_strlen("Hello"))
 		return (0);
 	else

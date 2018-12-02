@@ -13,7 +13,7 @@
 # include "libunit.h"
 # include <stdio.h>
 
-static int		ft_test_function(t_unit_test *test_struct, t_unit_test **test_list_ptr)
+static int		ft_test_function(t_unit_test *test_struct)
 {
 	pid_t	pid;
 	int		ret;
@@ -59,7 +59,7 @@ int		launch_test(t_unit_test **test_list_ptr)
 	{
 		//a enlever 
 		puts(temp->name);
-		if (ft_test_function(temp, test_list_ptr) == 0)
+		if (ft_test_function(temp) == 0)
 			passed_tests += 1;
 		temp = temp->prev;
 	}

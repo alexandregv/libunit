@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 18:33:52 by pclement         ###   ########.fr       */
+/*   Created: 2018/12/01 18:44:49 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/01 18:51:42 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libunit.h"
+#include "libunit.h"
 
-//A enlever
-# include <stdio.h>
-
-int		strlen_launcher(void)
+void	ft_free_list(t_unit_test *list_ptr)
 {
-	t_unit_test	*test_list;
+	t_unit_test		*temp;
 
-	test_list = 0;
-	load_test(&test_list, "Basic test", &basic_test);
-	return(launch_test(&test_list));
-}
-
-int		main()
-{
-	return (strlen_launcher());
+	while (list_ptr)
+	{
+		temp = list_ptr;
+		list_ptr = list_ptr->next;
+		free(temp);
+		temp = 0;
+	}
 }
