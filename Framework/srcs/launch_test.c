@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/01 19:31:03 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 12:28:20 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		ft_test_function(t_unit_test *test_struct)
 	pid_t	pid;
 	int		ret;
 
-	ret = 42;
+	ret = 0;
 	pid = fork();
 	if (pid < 0)
 	{
@@ -64,7 +64,8 @@ static int		ft_test_function(t_unit_test *test_struct)
 	else if (pid == 0)
 	{
 		ret = test_struct->func_ptr();
-		//ft_free_list(*test_list_ptr);
+		//test_struct = ft_get_first(test_struct);
+		//ft_free_list(test_struct);
 		exit(ret);
 	}
 	return (-1);

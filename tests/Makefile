@@ -1,7 +1,7 @@
 NAME = libunit_test_suite
 
 #compiler
-CC = clang
+CC = clang -g
 CFLAGS = -Werror -Wall -Wextra
 
 
