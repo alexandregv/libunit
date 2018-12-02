@@ -6,12 +6,17 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:03:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 12:12:59 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:18:06 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
+# define C_NONE         "\033[0m"
+# define C_RED          "\033[31m"
+# define C_GREEN        "\033[32m"
+# define C_UNDERLINE    "\033[4m"
+# define C_BOLD         "\033[1m"
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -33,6 +38,8 @@ void	load_test(t_unit_test **test_list_ptr, char *test_name, int(*test_func_ptr)
 int		launch_test(t_unit_test **test_list_ptr);
 void	ft_free_list(t_unit_test *list_ptr);
 t_unit_test	*ft_get_first(t_unit_test *list_ptr);
+void	ft_putnbr(int n);
+void	ft_putstr(char const *s);
 
 
 //A enlever

@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:44:49 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 12:22:42 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:11:09 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 t_unit_test	*ft_get_first(t_unit_test *list_ptr)
 {
-	printf("%p\n", list_ptr);
 	while (list_ptr && list_ptr->prev)
 		list_ptr = list_ptr->prev;
-	//enlever
-	printf("%p\n", list_ptr);
 	return list_ptr;
 }
 
