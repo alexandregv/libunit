@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 20:35:10 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:56:26 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@ static int		display_sig(int ret)
 	if (WIFEXITED(ret))
 	{
 		if (WEXITSTATUS(ret) == EXIT_SUCCESS)
-		{
 			ft_print_test_result("OK", 0);
-			return (0);
-		}
 		else
-		{
 			ft_print_test_result("KO", 1);
-			return (-1);
-		}
+		return ((WEXITSTATUS(ret) == EXIT_SUCCESS) ? 0 : -1);
 	}
 	else if (WIFSIGNALED(ret))
 	{
