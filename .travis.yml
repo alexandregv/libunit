@@ -1,0 +1,4 @@
+compiler: clang
+language: c
+script: make -C framework ; make test -C real-tests
+os: osx
