@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:47:49 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:58:27 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:38:33 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		strstr_launcher(void)
 {
 	t_unit_test	*test_list;
 
+	ft_print_test_suite_name("STRSTR");
 	test_list = 0;
 	load_test(&test_list, "Basic test", &strstr_basic_test);
 	load_test(&test_list, "No needle test", &strstr_empty_needle_test);

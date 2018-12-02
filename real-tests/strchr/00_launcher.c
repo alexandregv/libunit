@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:13:55 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:14:12 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:37:25 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		strchr_launcher(void)
 {
 	t_unit_test	*test_list;
 
+	ft_print_test_suite_name("STRCHR");
 	test_list = 0;
 	load_test(&test_list, "Basic test", &strchr_basic_test);
 	load_test(&test_list, "NULL test", &strchr_empty_test);

@@ -6,11 +6,11 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 17:12:06 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:57:04 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
+#include "../tests.h"
 
 int		atoi_launcher(void)
 {
@@ -24,8 +24,9 @@ int		atoi_launcher(void)
 	load_test(&test_list, "Basic test d", &atoi_basic_test_d);
 	load_test(&test_list, "Basic test e", &atoi_basic_test_e);
 	load_test(&test_list, "Basic test f", &atoi_basic_test_f);
-	//load_test(&test_list, "Hard one a", &atoi_hardone_a);
-	//load_test(&test_list, "Hard one b", &atoi_hardone_b);
-	return(launch_test(&test_list));
+	return (launch_test(&test_list));
 }
-
+/*
+**load_test(&test_list, "Hard one a", &atoi_hardone_a);
+**load_test(&test_list, "Hard one b", &atoi_hardone_b);
+*/
