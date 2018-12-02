@@ -15,9 +15,9 @@
 
 int		basic_test(void)
 {
-	char *str;
-
-	if (strlen("Hello1") == ft_strlen("Hello"))
+	char	*str;
+	char	*segv = "hello"; segv[1] = 'K';
+	if (strlen("Hello") == ft_strlen("Hello"))
 		return (0);
 	else
 		return (-1);
