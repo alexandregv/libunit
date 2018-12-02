@@ -1,3 +1,5 @@
 a.out
 a.out/*
 *.o
+*.a
+libunit_test_suite

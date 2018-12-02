@@ -12,6 +12,7 @@
 
 # include "libunit.h"
 # include <stdio.h>
+# include <signal.h>
 
 static int		ft_test_function(t_unit_test *test_struct)
 {
@@ -27,23 +28,46 @@ static int		ft_test_function(t_unit_test *test_struct)
 	}
 	if (pid > 0)
 	{
-		ft_putnbr(ret);
 		wait(&ret);
-		puts("\ndans pid diff 0");
-		puts("test");
-		ft_putnbr(ret);
-		puts("test");
+		if (WIFEXITED(ret))
+		{
+			if (WEXITSTATUS(ret) == EXIT_SUCCESS) // ou '== 0'
+			{
+				puts("test SUCCESS");
+				ft_putnbr(WEXITSTATUS(ret));
+				return (0);
+			}
+			else
+			{
+				puts("test FAIL");
+				ft_putnbr(WEXITSTATUS(ret));
+				return (-1);
+			}
+		}
+		else if (WIFSIGNALED(ret))
+		{
+			// faire un tableau qui regroupe tous les SIG ?
+			puts("test crashed");
+			if (WTERMSIG(ret) == SIGBUS)
+				puts("BUS ERROR");
+			else if (WTERMSIG(ret) == SIGSEGV)
+				puts("SEG FAULT");
+			ft_putnbr(WTERMSIG(ret));
+		}
+		else if (WIFSTOPPED(ret))
+		{
+			puts("test stopped by a SIG");
+			ft_putnbr(WSTOPSIG(ret));
+		}
+		return (-1);
 	}
 	else if (pid == 0)
 	{
-		puts("dans pid = 0");
 		ret = test_struct->func_ptr();
-		ft_putnbr(ret);
 		//ft_free_list(*test_list_ptr);
 		exit(ret);
 	}
-	return (ret);
-	// attention return Child ou va t il ?
+	return (-1);
 }
 
 int		launch_test(t_unit_test **test_list_ptr)

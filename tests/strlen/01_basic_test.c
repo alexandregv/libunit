@@ -15,7 +15,10 @@
 
 int		basic_test(void)
 {
-	if (strlen("Hello1") == ft_strlen("Hello"))
+// J'ai garde ton code mais voit pas trop l'interet des char *
+//	char	*str;
+	char	*segv = "hello"; segv[1] = 'K';
+	if (strlen("Hello") == ft_strlen("Hello"))
 		return (0);
 	else
 		return (-1);
