@@ -6,7 +6,7 @@
 #    By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 11:37:02 by aguiot--          #+#    #+#              #
-#    Updated: 2018/12/02 14:22:00 by aguiot--         ###   ########.fr        #
+#    Updated: 2018/12/02 18:22:17 by pclement         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	@gcc -g $(CFLAGS) -I $(INCLUDES) -c $(SRC)
+	@gcc $(CFLAGS) -I $(INCLUDES) -c $(SRC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 

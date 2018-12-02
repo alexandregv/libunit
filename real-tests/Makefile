@@ -118,6 +118,7 @@ fclean: clean
 	@$(MAKE) -C $(LIBUNIT_PATH) fclean
 	@$(MAKE) -C $(LIBFT_PATH) fclean
 	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME).dSYM
 
 re: 
 	@$(MAKE) fclean

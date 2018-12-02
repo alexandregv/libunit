@@ -59,6 +59,7 @@ clean:
 fclean: clean
 	@$(MAKE) -C $(LIB_PATH) fclean
 	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME).dSYM
 
 re: 
 	@$(MAKE) fclean

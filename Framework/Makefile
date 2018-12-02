@@ -68,6 +68,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME).dSYM
 	@$(RM) $(DBG_NAME)
 
 re: 
