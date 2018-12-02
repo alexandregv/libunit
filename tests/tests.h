@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 15:43:05 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 18:34:41 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		success_test(void);
 int		failure_test(void);
 int		segv_test(void);
 int		bus_test(void);
-//int		timeout_test(void);
+/*
+**int		timeout_test(void);
+*/
 
 #endif

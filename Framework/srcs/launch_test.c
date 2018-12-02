@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 18:15:27 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 18:32:59 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <signal.h>
 
-static int	display_sig(int ret)
+static int		display_sig(int ret)
 {
 	if (WIFEXITED(ret))
 	{
@@ -58,7 +58,7 @@ static int		ft_test_function(t_unit_test *test_struct)
 	if (pid > 0)
 	{
 		wait(&ret);
-		return (display_sig(ret));	
+		return (display_sig(ret));
 	}
 	else if (pid == 0)
 	{
@@ -70,7 +70,7 @@ static int		ft_test_function(t_unit_test *test_struct)
 	return (-1);
 }
 
-int		launch_test(t_unit_test **test_list_ptr)
+int				launch_test(t_unit_test **test_list_ptr)
 {
 	t_unit_test		*temp;
 	int				passed_tests;
