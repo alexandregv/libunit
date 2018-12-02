@@ -16,7 +16,7 @@ DEPENDENCIES = $(LIB_PATH)/Makefile $(LIB_PATH)/includes/libunit.h  Makefile
 #srcs
 MAIN_SRC_PATH =
 MAIN_SRC_NAME = main.c 00_launcher.c 01_success_test.c 02_failure_test.c \
-				03_segv_test.c 04_bus_test.c 05_timeout_test.c
+				03_segv_test.c 04_bus_test.c 05_timeout_test.c 06_fpe_test.c
 SRC = $(addprefix $(MAIN_SRC_PATH), $(MAIN_SRC_NAME))
 
 #obj
