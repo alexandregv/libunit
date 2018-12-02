@@ -8,17 +8,15 @@ CFLAGS = -Werror -Wall -Wextra
 CPPFLAGS = -Iincludes/
 
 #deps
-DEPENDENCIES = includes/libunit.h includes/libft.h Makefile
+DEPENDENCIES = includes/libunit.h Makefile
 
 # TODO ENLEVER libft.h ??
 
 
 #srcs
 SRC_PATH = srcs/
-SRC_NAME = load_test.c launch_test.c ft_utils.c\
-			ft_strlen.c ft_putnbr.c
+SRC_NAME = load_test.c launch_test.c ft_utils.c ft_putstr.c ft_putnbr.c
 
-#TODO enlever inutiles
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #obj

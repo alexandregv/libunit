@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 12:28:20 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:21:06 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static int		ft_test_function(t_unit_test *test_struct)
 		{
 			if (WEXITSTATUS(ret) == EXIT_SUCCESS) // ou '== 0'
 			{
-				puts("test SUCCESS");
+				ft_putstr("test SUCCESS");
 				ft_putnbr(WEXITSTATUS(ret));
 				return (0);
 			}
 			else
 			{
-				puts("test FAIL");
+				ft_putstr("test FAIL");
 				ft_putnbr(WEXITSTATUS(ret));
 				return (-1);
 			}
@@ -47,16 +47,16 @@ static int		ft_test_function(t_unit_test *test_struct)
 		else if (WIFSIGNALED(ret))
 		{
 			// faire un tableau qui regroupe tous les SIG ?
-			puts("test crashed");
+			ft_putstr("test crashed");
 			if (WTERMSIG(ret) == SIGBUS)
-				puts("BUS ERROR");
+				ft_putstr("BUS ERROR");
 			else if (WTERMSIG(ret) == SIGSEGV)
-				puts("SEG FAULT");
+				ft_putstr("SEG FAULT");
 			ft_putnbr(WTERMSIG(ret));
 		}
 		else if (WIFSTOPPED(ret))
 		{
-			puts("test stopped by a SIG");
+			ft_putstr("test stopped by a SIG");
 			ft_putnbr(WSTOPSIG(ret));
 		}
 		return (-1);
@@ -64,8 +64,8 @@ static int		ft_test_function(t_unit_test *test_struct)
 	else if (pid == 0)
 	{
 		ret = test_struct->func_ptr();
-		//test_struct = ft_get_first(test_struct);
-		//ft_free_list(test_struct);
+		test_struct = ft_get_first(test_struct);
+		ft_free_list(test_struct);
 		exit(ret);
 	}
 	return (-1);
@@ -82,8 +82,7 @@ int		launch_test(t_unit_test **test_list_ptr)
 	passed_tests = 0;
 	while (temp)
 	{
-		//a enlever 
-		puts(temp->name);
+		ft_putstr(temp->name);
 		if (ft_test_function(temp) == 0)
 			passed_tests += 1;
 		temp = temp->prev;

@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 12:24:20 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 14:48:40 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TESTS_H
 
 # include "../Framework/includes/libunit.h"
+# include "libft/libft.h"
 
 // strlen
 int		strlen_launcher(void);
