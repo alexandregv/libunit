@@ -6,14 +6,14 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 17:32:57 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 19:08:18 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 
-# include "../Framework/includes/libunit.h"
+# include "../framework/includes/libunit.h"
 # include "libft/libft.h"
 
 int		strlen_launcher(void);

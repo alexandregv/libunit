@@ -6,7 +6,7 @@ CFLAGS = -Werror -Wall -Wextra
 
 
 #libs
-LIBUNIT_PATH = ../Framework/
+LIBUNIT_PATH = ../framework/
 LIBUNIT_NAME = libunit.a
 LIBUNIT = $(addprefix $(LIBUNIT_PATH), $(LIBUNIT_NAME))
 

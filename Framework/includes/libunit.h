@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:03:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 18:31:32 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 19:05:08 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <sys/types.h>
+# include <signal.h>
 # include <sys/wait.h>
 
 typedef struct	s_unit_test

@@ -6,7 +6,7 @@ CFLAGS = -Werror -Wall -Wextra
 
 
 #libs
-LIB_PATH = ../Framework/
+LIB_PATH = ../framework/
 LIB_NAME = libunit.a
 LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
 

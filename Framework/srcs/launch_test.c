@@ -6,13 +6,11 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 18:32:59 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 19:04:56 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-#include <stdio.h>
-#include <signal.h>
 
 static int		display_sig(int ret)
 {
@@ -91,8 +89,5 @@ int				launch_test(t_unit_test **test_list_ptr)
 	}
 	ft_print_test_suite_result(passed_tests, total_tests);
 	ft_free_list(*test_list_ptr);
-	if (passed_tests == total_tests)
-		return (0);
-	else
-		return (-1);
+	return (passed_tests == total_tests) ? 0 : -1;
 }

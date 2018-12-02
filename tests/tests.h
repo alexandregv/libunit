@@ -6,14 +6,14 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 18:34:41 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 19:07:46 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 
-# include "../Framework/includes/libunit.h"
+# include "../framework/includes/libunit.h"
 
 int		launcher(void);
 int		success_test(void);
