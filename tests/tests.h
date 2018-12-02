@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 20:18:54 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:34:41 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int		segv_test(void);
 int		bus_test(void);
 int		fpe_test(void);
 int		timeout_test(void);
+int		fpe_test(void);
 
 #endif

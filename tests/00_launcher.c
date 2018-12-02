@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 20:18:01 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:34:51 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		launcher(void)
 	load_test(&test_list, "Bus Error test", &bus_test);
 	load_test(&test_list, "FPE test", &fpe_test);
 	load_test(&test_list, "Test timeout", &timeout_test);
+	load_test(&test_list, "FPE test", &fpe_test);
 	return (launch_test(&test_list));
 }
