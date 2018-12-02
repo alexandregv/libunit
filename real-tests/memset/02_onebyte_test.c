@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 15:34:28 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 15:35:32 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 16:02:22 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 16:03:26 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@
 
 int			memset_onebyte_test(void)
 {
-	char	*str;
+	char	*mem1;
+	char	*mem2;
 	
-	if ((str = (char*)malloc(sizeof(char) * 1)) == NULL)
+	if (((mem1 = (void*)malloc(1)) == 0) || ((mem2 = (void*)malloc(1)) == 0))
 		return (-1);
-	if (ft_memset(str, '\0', (size_t)1) == ft_memset(str, '\0', (size_t)1))
+	mem1 = ft_memset(mem1, 'Z', (size_t)1);
+	mem2 = memset(mem2, 'Z', (size_t)1);
+	if (memcmp(mem1, mem2, 1) == 0)
 	{
-		free(str);
-		str = NULL;
+		free(mem1);
+		free(mem2);
+		mem1 = NULL;
+		mem2 = NULL;
 		return (0);
 	}
 	else

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_onechar_test.c                                  :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 12:23:21 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:30:28 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 16:38:22 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 16:43:05 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
 # include <string.h>
 
-int		strlen_onechar_test(void)
+int			strdup_basic_test(void)
 {
-	if (ft_strlen("a") == strlen("a"))
+	char	*src;
+	char	*dst1;
+	char	*dst2;
+
+	src = "test";
+	dst1 = ft_strdup(src);
+	dst2 = strdup(src);
+	if (memcmp(dst1, dst2, 5) == 0)
 		return (0);
 	else
 		return (-1);

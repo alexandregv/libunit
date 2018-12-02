@@ -43,6 +43,20 @@ MEMSET_SRC_PATH = memset/
 MEMSET_SRC_NAME = 00_launcher.c 01_basic_test.c 02_onebyte_test.c
 SRC += $(addprefix $(MEMSET_SRC_PATH), $(MEMSET_SRC_NAME))
 
+STRCHR_SRC_PATH = strchr/
+STRCHR_SRC_NAME = 00_launcher.c 01_basic_test.c 02_empty_test.c
+SRC += $(addprefix $(STRCHR_SRC_PATH), $(STRCHR_SRC_NAME))
+
+STRDUP_SRC_PATH = strdup/
+STRDUP_SRC_NAME = 00_launcher.c 01_basic_test.c 02_empty_test.c
+SRC += $(addprefix $(STRDUP_SRC_PATH), $(STRDUP_SRC_NAME))
+
+STRSTR_SRC_PATH = strstr/
+STRSTR_SRC_NAME = 00_launcher.c 01_basic_test.c 02_empty_needle_test.c \
+				  03_empty_stack_test.c 04_empty_both_test.c
+
+SRC += $(addprefix $(STRSTR_SRC_PATH), $(STRSTR_SRC_NAME))
+
 #obj
 OBJ_PATH = obj/
 OBJ_NAME = $(SRC:.c=.o)
@@ -72,6 +86,9 @@ $(OBJ_PATH)%.o: %.c
 	@mkdir $(OBJ_PATH)/$(ISUPPER_SRC_PATH) 2> /dev/null || true
 	@mkdir $(OBJ_PATH)/$(TOLOWER_SRC_PATH) 2> /dev/null || true
 	@mkdir $(OBJ_PATH)/$(MEMSET_SRC_PATH) 2> /dev/null || true
+	@mkdir $(OBJ_PATH)/$(STRCHR_SRC_PATH) 2> /dev/null || true
+	@mkdir $(OBJ_PATH)/$(STRDUP_SRC_PATH) 2> /dev/null || true
+	@mkdir $(OBJ_PATH)/$(STRSTR_SRC_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(LIBFT):
