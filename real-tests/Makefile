@@ -20,9 +20,16 @@ DEPENDENCIES = $(LIB_PATH)/Makefile $(LIB_PATH)/includes/libunit.h  Makefile
 # TODO ENLEVER libft.h ?? verifier
 #srcs
 MAIN_SRC_PATH = 
-MAIN_SRC_NAME = main.c 00_launcher.c 01_success_test.c 02_failure_test.c \
-				03_segv_test.c 04_bus_test.c 05_timeout_test.c
+MAIN_SRC_NAME = main.c
 SRC = $(addprefix $(MAIN_SRC_PATH), $(MAIN_SRC_NAME))
+
+STRLEN_SRC_PATH = strlen/
+STRLEN_SRC_NAME = 00_launcher.c 01_basic_test.c 02_null_test.c 03_onechar_test.c
+SRC += $(addprefix $(STRLEN_SRC_PATH), $(STRLEN_SRC_NAME))
+
+ISUPPER_SRC_PATH = isupper/
+ISUPPER_SRC_NAME = 00_launcher.c 01_basic_test.c 02_int_test.c
+SRC += $(addprefix $(ISUPPER_SRC_PATH), $(ISUPPER_SRC_NAME))
 
 #obj
 OBJ_PATH = obj/
@@ -50,6 +57,7 @@ $(NAME): $(LIB) $(OBJ) $(DEPENDENCIES)
 $(OBJ_PATH)%.o: %.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@mkdir $(OBJ_PATH)/$(STRLEN_SRC_PATH) 2> /dev/null || true
+	@mkdir $(OBJ_PATH)/$(ISUPPER_SRC_PATH) 2> /dev/null || true
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(LIB):
