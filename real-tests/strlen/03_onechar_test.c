@@ -6,12 +6,12 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 12:23:21 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:30:28 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:48:50 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
-# include <string.h>
+#include "../tests.h"
+#include <string.h>
 
 int		strlen_onechar_test(void)
 {

@@ -6,12 +6,12 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 15:15:43 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 15:15:44 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:37:08 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
-# include <ctype.h>
+#include "../tests.h"
+#include <ctype.h>
 
 int		tolower_up_test(void)
 {

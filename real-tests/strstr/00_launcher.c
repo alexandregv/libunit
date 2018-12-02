@@ -6,11 +6,11 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:47:49 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:58:27 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:40:45 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
+#include "../tests.h"
 
 int		strstr_launcher(void)
 {
@@ -21,6 +21,5 @@ int		strstr_launcher(void)
 	load_test(&test_list, "No needle test", &strstr_empty_needle_test);
 	load_test(&test_list, "No stack test", &strstr_empty_stack_test);
 	load_test(&test_list, "No both test", &strstr_empty_both_test);
-	return(launch_test(&test_list));
+	return (launch_test(&test_list));
 }
-

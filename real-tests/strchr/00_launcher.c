@@ -6,11 +6,11 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:13:55 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:14:12 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:50:15 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../tests.h"
+#include "../tests.h"
 
 int		strchr_launcher(void)
 {
@@ -19,6 +19,5 @@ int		strchr_launcher(void)
 	test_list = 0;
 	load_test(&test_list, "Basic test", &strchr_basic_test);
 	load_test(&test_list, "NULL test", &strchr_empty_test);
-	return(launch_test(&test_list));
+	return (launch_test(&test_list));
 }
-
