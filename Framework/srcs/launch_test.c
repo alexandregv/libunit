@@ -6,13 +6,42 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 15:24:13 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 18:15:27 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libunit.h"
-# include <stdio.h>
-# include <signal.h>
+#include "libunit.h"
+#include <stdio.h>
+#include <signal.h>
+
+static int	display_sig(int ret)
+{
+	if (WIFEXITED(ret))
+	{
+		if (WEXITSTATUS(ret) == EXIT_SUCCESS)
+		{
+			ft_print_test_result("OK", 0);
+			return (0);
+		}
+		else
+		{
+			ft_print_test_result("KO", 1);
+			return (-1);
+		}
+	}
+	else if (WIFSIGNALED(ret))
+	{
+		if (WTERMSIG(ret) == SIGBUS)
+			ft_print_test_result("Bus Error", 1);
+		else if (WTERMSIG(ret) == SIGSEGV)
+			ft_print_test_result("Seg Fault", 1);
+		else if (WTERMSIG(ret) == SIGQUIT)
+			ft_print_test_result("Quitted", 1);
+		else if (WTERMSIG(ret) == SIGFPE)
+			ft_print_test_result("Floating point exception", 1);
+	}
+	return (-1);
+}
 
 static int		ft_test_function(t_unit_test *test_struct)
 {
@@ -29,28 +58,7 @@ static int		ft_test_function(t_unit_test *test_struct)
 	if (pid > 0)
 	{
 		wait(&ret);
-		if (WIFEXITED(ret))
-		{
-			if (WEXITSTATUS(ret) == EXIT_SUCCESS) // ou '== 0'
-			{
-				ft_print_test_result("OK", 0);
-				return (0);
-			}
-			else
-			{
-				ft_print_test_result("KO", 1);
-				return (-1);
-			}
-		}
-		else if (WIFSIGNALED(ret))
-		{
-			// faire un tableau qui regroupe tous les SIG ?
-			if (WTERMSIG(ret) == SIGBUS)
-				ft_print_test_result("Bus Error", 1);
-			else if (WTERMSIG(ret) == SIGSEGV)
-				ft_print_test_result("Seg Fault", 1);
-		}
-		return (-1);
+		return (display_sig(ret));	
 	}
 	else if (pid == 0)
 	{

@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_failure_test.c                                  :+:      :+:    :+:   */
+/*   ft_list_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 11:32:50 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 17:36:11 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 18:10:55 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 18:11:00 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libunit.h"
 
-int		failure_test(void)
+t_unit_test	*ft_get_first(t_unit_test *list_ptr)
 {
-	if (1 == 0)
-		return (0);
-	else
-		return (-1);
+	while (list_ptr && list_ptr->prev)
+		list_ptr = list_ptr->prev;
+	return (list_ptr);
 }

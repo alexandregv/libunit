@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/12/02 18:09:43 by aguiot--          #+#    #+#              #
+#    Updated: 2018/12/02 18:10:05 by aguiot--         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libunit.a
 
 #compiler
@@ -10,12 +22,10 @@ CPPFLAGS = -Iincludes/
 #deps
 DEPENDENCIES = includes/libunit.h Makefile
 
-# TODO ENLEVER libft.h ??
-
-
 #srcs
 SRC_PATH = srcs/
-SRC_NAME = load_test.c launch_test.c ft_utils.c ft_putstr.c ft_putnbr.c
+SRC_NAME = load_test.c launch_test.c ft_print_utils.c ft_list_utils.c \
+		   ft_putstr.c ft_putnbr.c
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
@@ -25,10 +35,10 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
 # Debug variables
- DBG_CFLAGS = -g -O0
- DBG_NAME = libft-debug.a
- DBG_PATH = debug/
- DBG_OBJ = $(addprefix $(DBG_PATH), $(OBJ_NAME))
+# DBG_CFLAGS = -g -O0
+# DBG_NAME = libft-debug.a
+# DBG_PATH = debug/
+# DBG_OBJ = $(addprefix $(DBG_PATH), $(OBJ_NAME))
 # DBG_LIB = $(addprefix $(LIB_PATH)/, $(LIB_PATH)-debug.a)
 
 #disable implicit rules

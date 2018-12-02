@@ -6,13 +6,13 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:36:36 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 11:37:07 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:36:02 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "tests.h"
+#include "tests.h"
 
-int			timeout_test(void)
+int		timeout_test(void)
 {
 	while (42 > 1)
 		;

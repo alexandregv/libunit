@@ -6,11 +6,11 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:33:36 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 11:35:04 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:35:43 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "tests.h"
+#include "tests.h"
 
 int			segv_test(void)
 {

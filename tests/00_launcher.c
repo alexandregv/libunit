@@ -6,11 +6,11 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 15:43:07 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:40:05 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "tests.h"
+#include "tests.h"
 
 int		launcher(void)
 {
@@ -23,6 +23,5 @@ int		launcher(void)
 	load_test(&test_list, "Seg Fault test", &segv_test);
 	load_test(&test_list, "Bus Error test", &bus_test);
 	//load_test(&test_list, "Test timeout", &timeout_test);
-	return(launch_test(&test_list));
+	return (launch_test(&test_list));
 }
-
