@@ -10,16 +10,11 @@ LIB_PATH = ../Framework/
 LIB_NAME = libunit.a
 LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
 
-#flags for preprocessor
-#CPPFLAGS = -I ../Framework/includes/
-#LFLAGS = -Llibunit -lunit
-
 #deps
 DEPENDENCIES = $(LIB_PATH)/Makefile $(LIB_PATH)/includes/libunit.h  Makefile
 
-# TODO ENLEVER libft.h ?? verifier
 #srcs
-MAIN_SRC_PATH = 
+MAIN_SRC_PATH =
 MAIN_SRC_NAME = main.c 00_launcher.c 01_success_test.c 02_failure_test.c \
 				03_segv_test.c 04_bus_test.c 05_timeout_test.c
 SRC = $(addprefix $(MAIN_SRC_PATH), $(MAIN_SRC_NAME))

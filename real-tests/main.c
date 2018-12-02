@@ -2,7 +2,16 @@
 
 int	main(void)
 {
-	strlen_launcher();
-	isupper_launcher();
-	return (0);
+	int		ret;
+
+	ret = 0;
+	ret = strlen_launcher();
+	ret += isupper_launcher();
+	ret += tolower_launcher();
+	ret += memset_launcher();
+	ret += atoi_launcher();
+	if (ret == 0)
+		return (0);
+	else
+		return (-1);
 }

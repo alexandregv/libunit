@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test.c                                    :+:      :+:    :+:   */
+/*   02_hardone_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 15:03:54 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:06:25 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 16:42:49 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/02 17:08:13 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
-# include <ctype.h>
+# include <stdlib.h>
 
-int		isupper_basic_test(void)
+int		atoi_hardone_b(void)
 {
-	if (ft_isupper('a') == isupper('a'))
+	char *str;
+
+	str = "  -18446744073709551920";
+	if (ft_atoi(str) == atoi(str))
 		return (0);
 	else
 		return (-1);

@@ -6,20 +6,26 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:57:03 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 17:12:06 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
 
-int		isupper_launcher(void)
+int		atoi_launcher(void)
 {
 	t_unit_test	*test_list;
 
+	ft_print_test_suite_name("ATOI");
 	test_list = 0;
-	load_test(&test_list, "Basic test UP", &isupper_up_test);
-	load_test(&test_list, "Basic test DOWN", &isupper_down_test);
-	load_test(&test_list, "Int test", &isupper_int_test);
+	load_test(&test_list, "Basic test a", &atoi_basic_test_a);
+	load_test(&test_list, "Basic test b", &atoi_basic_test_b);
+	load_test(&test_list, "Basic test c", &atoi_basic_test_c);
+	load_test(&test_list, "Basic test d", &atoi_basic_test_d);
+	load_test(&test_list, "Basic test e", &atoi_basic_test_e);
+	load_test(&test_list, "Basic test f", &atoi_basic_test_f);
+	//load_test(&test_list, "Hard one a", &atoi_hardone_a);
+	//load_test(&test_list, "Hard one b", &atoi_hardone_b);
 	return(launch_test(&test_list));
 }
 
