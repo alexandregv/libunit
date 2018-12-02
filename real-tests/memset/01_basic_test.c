@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 15:25:53 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 15:33:38 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 16:00:02 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@
 
 int			memset_basic_test(void)
 {
-	char	*str;
+	char	*mem1;
+	char	*mem2;
 	
-	if ((str = (char*)malloc(sizeof(char) * 5)) == NULL)
+	if (((mem1 = (void*)malloc(5)) == 0) || ((mem2 = (void*)malloc(5)) == 0))
 		return (-1);
-	if (ft_memset(str, '\0', (size_t)5) == ft_memset(str, '\0', (size_t)5))
+	mem1 = ft_memset(mem1, 'Z', (size_t)5);
+	mem2 = memset(mem2, 'Z', (size_t)5);
+	if (memcmp(mem1, mem2, 5) == 0)
 	{
-		free(str);
-		str = NULL;
+		free(mem1);
+		free(mem2);
+		mem1 = NULL;
+		mem2 = NULL;
 		return (0);
 	}
 	else

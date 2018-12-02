@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_onechar_test.c                                  :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 12:23:21 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 16:30:28 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 16:13:55 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 16:14:12 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../tests.h"
-# include <string.h>
 
-int		strlen_onechar_test(void)
+int		strchr_launcher(void)
 {
-	if (ft_strlen("a") == strlen("a"))
-		return (0);
-	else
-		return (-1);
+	t_unit_test	*test_list;
+
+	test_list = 0;
+	load_test(&test_list, "Basic test", &strchr_basic_test);
+	load_test(&test_list, "NULL test", &strchr_empty_test);
+	return(launch_test(&test_list));
 }
+

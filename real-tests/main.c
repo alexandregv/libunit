@@ -10,6 +10,9 @@ int	main(void)
 	ret += tolower_launcher();
 	ret += memset_launcher();
 	ret += atoi_launcher();
+	ret += strchr_launcher();
+	ret += 	strdup_launcher();
+	ret += 	strstr_launcher();
 	if (ret == 0)
 		return (0);
 	else
