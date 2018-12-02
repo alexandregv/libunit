@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:03:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:18:06 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 15:22:01 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ void	ft_free_list(t_unit_test *list_ptr);
 t_unit_test	*ft_get_first(t_unit_test *list_ptr);
 void	ft_putnbr(int n);
 void	ft_putstr(char const *s);
+void		ft_print_test_name(char *name);
+void		ft_print_test_suite_name(char *name);
+void		ft_print_test_result(char *result, int result_type);
+void		ft_print_test_suite_result(int passed_tests, int total_tests);
 
 
 //A enlever

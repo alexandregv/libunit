@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 14:21:06 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 15:21:56 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,22 @@ static int		ft_test_function(t_unit_test *test_struct)
 		{
 			if (WEXITSTATUS(ret) == EXIT_SUCCESS) // ou '== 0'
 			{
-				ft_putstr("test SUCCESS");
-				ft_putnbr(WEXITSTATUS(ret));
+				ft_print_test_result("OK", 0);
 				return (0);
 			}
 			else
 			{
-				ft_putstr("test FAIL");
-				ft_putnbr(WEXITSTATUS(ret));
+				ft_print_test_result("KO", 1);
 				return (-1);
 			}
 		}
 		else if (WIFSIGNALED(ret))
 		{
 			// faire un tableau qui regroupe tous les SIG ?
-			ft_putstr("test crashed");
 			if (WTERMSIG(ret) == SIGBUS)
-				ft_putstr("BUS ERROR");
+				ft_print_test_result("Bus Error", 1);
 			else if (WTERMSIG(ret) == SIGSEGV)
-				ft_putstr("SEG FAULT");
-			ft_putnbr(WTERMSIG(ret));
-		}
-		else if (WIFSTOPPED(ret))
-		{
-			ft_putstr("test stopped by a SIG");
-			ft_putnbr(WSTOPSIG(ret));
+				ft_print_test_result("Seg Fault", 1);
 		}
 		return (-1);
 	}
@@ -75,18 +66,25 @@ int		launch_test(t_unit_test **test_list_ptr)
 {
 	t_unit_test		*temp;
 	int				passed_tests;
+	int				total_tests;
 
 	temp = *test_list_ptr;
 	while (temp && temp->next)
 		temp = temp->next;
 	passed_tests = 0;
+	total_tests = 0;
 	while (temp)
 	{
-		ft_putstr(temp->name);
+		ft_print_test_name(temp->name);
+		total_tests++;
 		if (ft_test_function(temp) == 0)
 			passed_tests += 1;
 		temp = temp->prev;
 	}
+	ft_print_test_suite_result(passed_tests, total_tests);
 	ft_free_list(*test_list_ptr);
-	return passed_tests;
+	if (passed_tests == total_tests)
+		return (0);
+	else
+		return (-1);
 }
