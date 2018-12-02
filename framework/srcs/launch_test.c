@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 19:04:56 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:04:18 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int		display_sig(int ret)
 			ft_print_test_result("Quitted", 1);
 		else if (WTERMSIG(ret) == SIGFPE)
 			ft_print_test_result("Floating point exception", 1);
+		else if (WTERMSIG(ret) == SIGALRM)
+			ft_print_test_result("Timed out", 1);
 	}
 	return (-1);
 }
@@ -60,6 +62,7 @@ static int		ft_test_function(t_unit_test *test_struct)
 	}
 	else if (pid == 0)
 	{
+		alarm(10);
 		ret = test_struct->func_ptr();
 		test_struct = ft_get_first(test_struct);
 		ft_free_list(test_struct);
