@@ -4,7 +4,6 @@ NAME = libunit_test_suite
 CC = clang -g
 CFLAGS = -Werror -Wall -Wextra
 
-
 #libs
 LIB_PATH = ../framework/
 LIB_NAME = libunit.a

@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:16:26 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 20:20:26 by aguiot--         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:35:10 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int		display_sig(int ret)
 			ft_print_test_result("Floating Point Exception", 1);
 		else if (WTERMSIG(ret) == SIGALRM)
 			ft_print_test_result("Timed out", 1);
+		else if (WTERMSIG(ret) == SIGABRT)
+			ft_print_test_result("Aborted", 1);
 	}
 	return (-1);
 }
