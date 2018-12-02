@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/02 15:39:05 by pclement          #+#    #+#             */
+/*   Updated: 2018/12/02 15:43:17 by pclement         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		strlen_launcher(void);
-//mettre dans header
+#include "tests.h"
 
 int		main()
 {
-	strlen_launcher();
-	return (0);
+	int		ret;
+
+	ret = launcher();
+	return (ret);
 }

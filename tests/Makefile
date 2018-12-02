@@ -36,12 +36,12 @@ CYAN		=	\033[36m
 
 #disable implicit rules
 .SUFFIXES:
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re test
 
 all: $(NAME)
 
 test: $(NAME)
-	@./$(NAME)
+	@./$(NAME) 2> /dev/null
 
 $(NAME): $(LIB) $(OBJ) $(DEPENDENCIES)
 	@$(CC)  $(CFLAGS) $(OBJ) $(LIB) -o $@

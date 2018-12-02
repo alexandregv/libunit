@@ -6,13 +6,13 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 15:40:15 by pclement          #+#    #+#             */
-/*   Updated: 2018/12/02 15:10:55 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 15:43:07 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "tests.h"
 
-int		strlen_launcher(void)
+int		launcher(void)
 {
 	t_unit_test	*test_list;
 
