@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 17:45:54 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 20:46:22 by aguiot--         ###   ########.fr       */
+/*   Created: 2018/12/02 20:44:51 by aguiot--          #+#    #+#             */
+/*   Updated: 2018/12/02 20:45:19 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "../tests.h"
 
-int	main(void)
+int		putchar_launcher(void)
 {
-	int	ret;
+	t_unit_test	*test_list;
 
-	ret = 0;
-	ret = strlen_launcher();
-	ret += isupper_launcher();
-	ret += tolower_launcher();
-	ret += memset_launcher();
-	ret += atoi_launcher();
-	ret += strchr_launcher();
-	ret += strdup_launcher();
-	ret += strstr_launcher();
-	ret += putchar_launcher();
-	if (ret == 0)
-		return (0);
-	else
-		return (-1);
+	ft_print_test_suite_name("PUTCHAR");
+	test_list = 0;
+	load_test(&test_list, "Basic test", &putchar_basic_test);
+	return (launch_test(&test_list));
 }

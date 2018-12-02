@@ -6,7 +6,7 @@
 /*   By: aguiot-- <aguiot--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 11:19:39 by aguiot--          #+#    #+#             */
-/*   Updated: 2018/12/02 19:08:18 by pclement         ###   ########.fr       */
+/*   Updated: 2018/12/02 20:46:05 by aguiot--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ int		strstr_basic_test(void);
 int		strstr_empty_needle_test(void);
 int		strstr_empty_stack_test(void);
 int		strstr_empty_both_test(void);
+
+int		putchar_launcher(void);
+int		putchar_basic_test(void);
 
 #endif
